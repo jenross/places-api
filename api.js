@@ -5,15 +5,8 @@ let restaurant = document.getElementById('restaurant');
 let bar = document.getElementById('bar');
 let locationSearch; 
 let place; 
+let locationArr = [];
 // let service = new google.maps.places.PlacesService(map);
-//need to move this into onclick function 
-// if (cafe.checked = true) {
-//     typeOfPlace = cafe; 
-// } else if (restaurant.checked = true) {
-//     typeOfPlace = restaurant; 
-// } else if (bar.checked = true) {
-//     typeOfPlace = bar; 
-// }
 
 // let placeFilter = typeOfPlace.id; 
 
@@ -46,13 +39,26 @@ $(".create-hangout").on("click", function(event) {
     //     // console.log(place.url);
     //     // console.log(place.geometry.location);
         locationSearch = place.geometry.location; 
+        let lat = place.geometry.location.lat();
+        let lng = place.geometry.location.lng();
+        console.log(lat);
+        console.log(lng);
+        // locationSearch.push(locationArr);
+        // let location= locationSearch.replace(/[()]/g, '');
+        // let location= locationSearch.slice(1, -1);
+        console.log(location);
         const APIKEY = "AIzaSyDWLRgKxz3nTinzcUXCyjM1DNpe9e4_g2w";
-        let initialQueryURL = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=${APIKEY}&location=${locationSearch}&radius=1000&type=restaurant`;
+        let initialQueryURL = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=${APIKEY}&location=${lat},${lng}&radius=1000&type=restaurant`;
         $.ajax({
             url: initialQueryURL,
             method: "GET"
         }).then(function(response) {
             console.log(response);
+            for (let i = 0; i < response.length; i++) {
+                console.log(response.results[i].name);
+                console.log(response.results[i].opening_hours);
+                console.log(response.results[i].photos);
+            }
         });
             // let request = {
             //     location: locationSearch, 
@@ -63,14 +69,6 @@ $(".create-hangout").on("click", function(event) {
             // console.log(request);
 
 });
-
-
-// let locationInput = document.getElementById('enterLocation');
-// let googleLogo = document.getElementById('google-logo');
-
-// let locationResult;
-// let searchResults;
-// let map; 
 
 // Google Maps Initializer
 // function initMap() {
