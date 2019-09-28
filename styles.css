@@ -1,8 +1,9 @@
-/* #map {
-    height: 400px; 
-    width: 500px; 
-    margin: 0 auto; 
-} */
 .map-container {
     height: 100%; 
+}
+
+#map {
+    height: 300px;
+    width: 450px;
+    margin: 0 auto;
 }
