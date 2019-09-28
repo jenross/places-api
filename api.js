@@ -59,6 +59,7 @@ $(".create-hangout").on("click", function(event) {
                 let pickIcon = response.result.icon;
                 let pickOpenNow = response.result.opening_hours.open_now;
                 let pickWebsite = response.result.website;
+                console.log(pickName);
                 // $("#")
             });
         });

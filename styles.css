@@ -18,7 +18,8 @@ body {
 #map{
     width: 50%;
     margin: 0 auto;
-    display: inline-block; 
+    /* display: inline-block;  */
+    overflow: hidden;
 }
 
 .map-container {
