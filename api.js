@@ -1,4 +1,6 @@
 // let map;
+initMap();
+
 let typeOfPlace; 
 let cafe = document.getElementById('cafe');
 let restaurant = document.getElementById('restaurant');
@@ -73,7 +75,7 @@ function initMap() {
     var map = new google.maps.Map(
         document.getElementById('map'), {zoom: 4, center: uluru});
     // The marker, positioned at Uluru
-    var marker = new google.maps.Marker({position: uluru, map: map});
+    // var marker = new google.maps.Marker({position: uluru, map: map});
 }
 
 // function initMap() {
