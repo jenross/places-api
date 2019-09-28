@@ -16,9 +16,9 @@ body {
 } */
 
 #map{
-    height: 300px;
-    width: 450px;
+    width: 50%;
     margin: 0 auto;
+    display: inline-block; 
 }
 
 .map-container {
