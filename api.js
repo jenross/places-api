@@ -1,4 +1,4 @@
-let map;
+// let map;
 let typeOfPlace; 
 let cafe = document.getElementById('cafe');
 let restaurant = document.getElementById('restaurant');
@@ -67,16 +67,20 @@ var service;
 var infowindow;
 
 function initMap() {
-var sydney = new google.maps.LatLng(-33.867, 151.195);
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: -25.344, lng: 131.036},
+        zoom: 15
+    });
+    // var sydney = new google.maps.LatLng(-33.867, 151.195);
 
-infowindow = new google.maps.InfoWindow();
+    // infowindow = new google.maps.InfoWindow();
 
-map = new google.maps.Map(
-    document.getElementById('map'), {center: sydney, zoom: 15});
+    // map = new google.maps.Map(
+    //     document.getElementById('map'), {center: sydney, zoom: 15});
 
-var request = {
-    query: 'Museum of Contemporary Art Australia',
-    fields: ['name', 'geometry'],
+    // var request = {
+    //     query: 'Museum of Contemporary Art Australia',
+    //     fields: ['name', 'geometry'],
 };
 
 service = new google.maps.places.PlacesService(map);
